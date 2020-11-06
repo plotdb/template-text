@@ -13,12 +13,15 @@ argv = yargs
     type: \string
   .help!
   .alias \help, \h
+  .check (argv, options) ->
+    if !argv._.0 or !fs.exists-sync(argv._.0) => throw new Error("input file missing")
+    return true
   .argv
 
 input = argv._.0
 output = argv.o
 cfg = argv.c
 
-ret = tt(input, JSON.parse(fs.read-file-sync(cfg).toString!))
+ret = tt(fs.read-file-sync(input).toString!, if cfg => JSON.parse(fs.read-file-sync(cfg).toString!) else {})
 if output => fs.write-file-sync output, ret
 else console.log ret

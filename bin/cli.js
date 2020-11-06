@@ -12,11 +12,18 @@ argv = yargs.option('config', {
   alias: 'o',
   description: "output file name. print to stdout if omitted",
   type: 'string'
-}).help().alias('help', 'h').argv;
+}).help().alias('help', 'h').check(function(argv, options){
+  if (!argv._[0] || !fs.existsSync(argv._[0])) {
+    throw new Error("input file missing");
+  }
+  return true;
+}).argv;
 input = argv._[0];
 output = argv.o;
 cfg = argv.c;
-ret = tt(input, JSON.parse(fs.readFileSync(cfg).toString()));
+ret = tt(fs.readFileSync(input).toString(), cfg
+  ? JSON.parse(fs.readFileSync(cfg).toString())
+  : {});
 if (output) {
   fs.writeFileSync(output, ret);
 } else {
