@@ -1,8 +1,7 @@
 require! <[fs LiveScript]>
 
-engine = (code, cfg) ->
+engine = (code = "", cfg = {}) ->
   cfg = if typeof(cfg) == \function => cfg! else cfg
-  code = fs.read-file-sync \config.ngx .toString!
   code = code
     .replace(/\\/gm, "\\\\")
     .replace(/#/gm, "\\#")
