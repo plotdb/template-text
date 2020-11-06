@@ -1,6 +1,4 @@
-upstream servlet_api {
-  server !{ip}:!{if dynamic-port => get-port! else port};
-}
+!{include 'api.ngx'}
 
 server {
   listen 443;

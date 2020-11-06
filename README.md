@@ -25,8 +25,12 @@ Programmatically interpolate your template with `template-text` api:
 
     tt = require("template-text")
     cfg = function() { return { ... }; } || { ... };
-    ret = tt("<template-file-content>", cfg);
+    ret = tt("<template-file-content>", cfg, <root-path>);
 
+where:
+
+ - cfg: a hash of all available variable
+ - root-path: reference root when look up files for include api.
 
 ## Template File Format
 
@@ -65,6 +69,12 @@ Program counterpart for above text:
 
 
 We use LiveScript to parse the expression when interpolating.
+
+## Builtin Functions
+
+Except common JS APIs, you can also use following API in template:
+
+ - include(filename) - recursively include file in place.
 
 
 ## TODO

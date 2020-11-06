@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-require! <[fs yargs LiveScript]>
+require! <[fs path yargs LiveScript]>
 tt = require "./index"
 
 argv = yargs
@@ -35,6 +35,6 @@ else if require-module =>
   cfg = LiveScript.run("return require('#{require-module}')")
 else cfg = {}
 
-ret = tt(fs.read-file-sync(input).toString!, cfg)
+ret = tt(fs.read-file-sync(input).toString!, cfg, path.dirname(input))
 if output => fs.write-file-sync output, ret
 else console.log ret
