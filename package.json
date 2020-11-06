@@ -18,8 +18,8 @@
     "build": "./build"
   },
   "dependencies": {
-    "LiveScript": ">=1.2.0",
-    "yargs": "^16.1.0"
+    "yargs": "^16.1.0",
+    "LiveScript": ">=1.2.0"
   },
   "bin": {
     "tt": "./bin/cli.js"
