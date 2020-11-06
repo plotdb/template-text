@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require! <[fs yargs]>
-require! <[./index]>
+tt = require "./index"
 
 argv = yargs
   .option \config, do
@@ -19,6 +19,6 @@ input = argv._.0
 output = argv.o
 cfg = argv.c
 
-ret = main(input, JSON.parse(fs.read-file-sync(cfg).toString!))
+ret = tt(input, JSON.parse(fs.read-file-sync(cfg).toString!))
 if output => fs.write-file-sync output, ret
 else console.log ret
