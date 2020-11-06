@@ -14,6 +14,11 @@ command name and parameters:
     tt -c config.file -o output.file template.file
 
 
+You can also require a module as config to use functions in the template from the module:
+
+    tt -r some-module -o output.file template.file
+
+
 ## API
 
 Programmatically interpolate your template with `template-text` api:

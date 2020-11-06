@@ -7,8 +7,9 @@ engine = (code = "", cfg = {}) ->
     .replace(/#/gm, "\\#")
     .replace(/\$/gm, "\\$")
     .replace(/!{/gm, '#{')
-  vars = [[k,v] for k,v of cfg].map (d) -> """#{d.0} = #{JSON.stringify(d.1)};"""
-  code = "#{vars.join(\\n)} return " + '"""\n' + code + '""";'
-  ret = (LiveScript.run code)
+
+  vars = ["#k = cfg.#k" for k of cfg].join(\\n)
+  code = "#vars\nreturn " + '"""\n' + code + '"""'
+  ret = eval LiveScript.compile(code)
 
 module.exports = engine

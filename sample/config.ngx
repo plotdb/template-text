@@ -1,5 +1,5 @@
 upstream servlet_api {
-  server !{ip}:!{port};
+  server !{ip}:!{if dynamic-port => get-port! else port};
 }
 
 server {
