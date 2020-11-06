@@ -1,21 +1,21 @@
 {
   "author": "zbryikt",
-  "name": "text-template",
+  "name": "template-text",
   "main": "bin/index.js",
   "license": "MIT",
   "description": "text from template for all purposes",
   "version": "0.0.1",
-  "homepage": "https://github.com/plotdb/text-template",
+  "homepage": "https://github.com/plotdb/template-text",
   "repository": {
     "type": "git",
-    "url": "https://github.com/plotdb/text-template"
+    "url": "https://github.com/plotdb/template-text"
   },
   "engines": {
     "node": ">=0.12.6",
     "npm": ">=1.2.2"
   },
   "scripts": {
-    "start": "cd web; ../node_modules/.bin/lsc ../node_modules/template/server.ls"
+    "build": "./build"
   },
   "dependencies": {
     "LiveScript": ">=1.2.0",

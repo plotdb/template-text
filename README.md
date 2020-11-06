@@ -1,4 +1,4 @@
-# text-template
+# template-text
 
 generate text from template for all purposes with LiveScript syntax.
 
@@ -6,7 +6,7 @@ generate text from template for all purposes with LiveScript syntax.
 
 install with npm:
 
-    npm install --save text-template
+    npm install --save template-text
 
 
 command name and parameters:
@@ -16,9 +16,9 @@ command name and parameters:
 
 ## API
 
-Programmatically interpolate your template with `text-template` api:
+Programmatically interpolate your template with `template-text` api:
 
-    tt = require("text-template")
+    tt = require("template-text")
     cfg = function() { return { ... }; } || { ... };
     ret = tt("<template-file-content>", cfg);
 
@@ -54,7 +54,7 @@ When calling with API, you can even use builtin functions for expressions, or cu
 Program counterpart for above text:
 
     uuid = require("uuid");
-    tt = require("text-template");
+    tt = require("template-text");
 
     ret = tt(<the above text>, {uuid: uuid});
 
