@@ -59,6 +59,9 @@ Program counterpart for above text:
     ret = tt(<the above text>, {uuid: uuid});
 
 
+We use LiveScript to parse the expression when interpolating.
+
+
 ## TODO
 
  - Token Customizing - It's possible that the token `!{ ... }` is used by the target language / syntax of the text we want to interpolate. So it will be nice if we can make it customizable.
