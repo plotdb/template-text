@@ -80,6 +80,10 @@ Except common JS APIs, you can also use following API in template:
 ## TODO
 
  - Token Customizing - It's possible that the token `!{ ... }` is used by the target language / syntax of the text we want to interpolate. So it will be nice if we can make it customizable.
+ - Defaul Language - make it customizable about the language users want to use, at least for following languages:
+   - ES6 ( ES2015 or later )
+   - TypeScript
+   
 
 
 ## License 
