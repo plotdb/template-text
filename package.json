@@ -3,6 +3,9 @@
   "name": "template-text",
   "main": "bin/index.js",
   "license": "MIT",
+  "files": [
+    "bin/**/*"
+  ],
   "description": "text from template for all purposes",
   "version": "0.1.0",
   "homepage": "https://github.com/plotdb/template-text",
