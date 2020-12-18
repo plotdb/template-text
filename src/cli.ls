@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-require! <[fs path yargs LiveScript]>
+require! <[fs path yargs js-yaml LiveScript]>
 tt = require "./index"
 
 argv = yargs
   .option \config, do
     alias: \c
-    description: "config json file used to interpolate."
+    description: "config json/lson/yaml file used to interpolate."
     type: \string
   .option \require, do
     alias: \r
@@ -30,6 +30,7 @@ require-module = argv.r
 if cfg-file =>
   code = fs.read-file-sync(cfg-file).toString!
   if /\.ls(on)?$/.exec(cfg-file) => cfg = eval(LiveScript.compile(code, {bare: true, json: true, header: false}))
+  else if /\.ya?ml$/.exec(cfg-file) => cfg = js-yaml.safe-load code
   else cfg = JSON.parse(code)
 else if require-module =>
   cfg = LiveScript.run("return require('#{require-module}')")

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 mkdir -p bin
 echo "#!/usr/bin/env node" > ./bin/cli.js
-./node_modules/.bin/lsc -cbp ./src/cli.ls >> ./bin/cli.js
+npx lsc -cbp ./src/cli.ls >> ./bin/cli.js
 chmod 755 ./bin/cli.js
-./node_modules/.bin/lsc -cbp ./src/index.ls >> ./bin/index.js
+npx lsc -cbp ./src/index.ls >> ./bin/index.js
