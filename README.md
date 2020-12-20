@@ -1,6 +1,6 @@
 # template-text
 
-generate text from template for all purposes with LiveScript syntax.
+generate text from template for all purposes with LiveScript syntax. Use `eval` so one should always use this with owned/reviewed `template.file`.
 
 ## Usage
 
