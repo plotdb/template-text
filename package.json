@@ -7,22 +7,22 @@
     "bin/**/*"
   ],
   "description": "text from template for all purposes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/plotdb/template-text",
   "repository": {
     "type": "git",
     "url": "https://github.com/plotdb/template-text"
   },
   "engines": {
-    "node": ">=0.12.6",
-    "npm": ">=1.2.2"
+    "node": ">=10.14.1",
+    "npm": ">=6.4.1"
   },
   "scripts": {
     "build": "./build"
   },
   "dependencies": {
     "js-yaml": "^3.14.1",
-    "livescript": ">=1.6.0",
+    "livescript": "^1.6.0",
     "yargs": "^16.1.0"
   },
   "bin": {

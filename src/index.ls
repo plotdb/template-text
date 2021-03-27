@@ -1,4 +1,4 @@
-require! <[fs path LiveScript]>
+require! <[fs path livescript]>
 
 engine = (code = "", opt = {}, dir = '') ->
   cfg = if typeof(opt) == \function => opt! else opt
@@ -14,6 +14,6 @@ engine = (code = "", opt = {}, dir = '') ->
 
   vars = ["#k = cfg.#k" for k of cfg].join(\\n)
   code = "#vars\nreturn " + '"""\n' + code + '"""'
-  ret = eval LiveScript.compile(code)
+  ret = eval livescript.compile(code)
 
 module.exports = engine

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-require! <[fs path yargs js-yaml LiveScript]>
+require! <[fs path yargs js-yaml livescript]>
 tt = require "./index"
 
 argv = yargs
@@ -29,11 +29,11 @@ require-module = argv.r
 
 if cfg-file =>
   code = fs.read-file-sync(cfg-file).toString!
-  if /\.ls(on)?$/.exec(cfg-file) => cfg = eval(LiveScript.compile(code, {bare: true, json: true, header: false}))
+  if /\.ls(on)?$/.exec(cfg-file) => cfg = eval(livescript.compile(code, {bare: true, json: true, header: false}))
   else if /\.ya?ml$/.exec(cfg-file) => cfg = js-yaml.safe-load code
   else cfg = JSON.parse(code)
 else if require-module =>
-  cfg = LiveScript.run("return require('#{require-module}')")
+  cfg = livescript.run("return require('#{require-module}')")
 else cfg = {}
 
 ret = tt(fs.read-file-sync(input).toString!, cfg, path.dirname(input))
