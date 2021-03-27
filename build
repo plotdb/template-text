@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+rm -rf bin
 mkdir -p bin
 echo "#!/usr/bin/env node" > ./bin/cli.js
 npx lsc -cp --no-header ./src/cli.ls >> ./bin/cli.js

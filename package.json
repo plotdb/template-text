@@ -7,7 +7,7 @@
     "bin/**/*"
   ],
   "description": "text from template for all purposes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/plotdb/template-text",
   "repository": {
     "type": "git",

@@ -1,3 +1,9 @@
+# 0.1.2
+
+ - fix bug: build script incorrectly generates bin files.
+ - update outdated index.js
+
+
 # 0.1.1
 
  - only release necessary files.
