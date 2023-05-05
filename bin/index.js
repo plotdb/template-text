@@ -9,7 +9,7 @@
     opt == null && (opt = {});
     dir == null && (dir = '');
     cfg = typeof opt === 'function' ? opt() : opt;
-    code = code.replace(/\\/gm, "\\\\").replace(/#/gm, "\\#").replace(/\$/gm, "\\$").replace(/!{/gm, '#{');
+    code = code.replace(/\\/gm, "\\\\").replace(/#/gm, "\\#").replace(/\$/gm, "\\$").replace(/!{/gm, '#{').replace(/"""/gm, '\\"\\"\\"');
     include = function(filename){
       var subdir;
       subdir = path.dirname(path.join(dir, filename));
