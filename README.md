@@ -2,6 +2,9 @@
 
 generate text from template for all purposes with LiveScript syntax. Use `eval` so one should always use this with owned/reviewed `template.file`.
 
+Note: this is equivalent to run code in template. Always use it with trusted data source only.
+
+
 ## Usage
 
 install with npm:
@@ -69,6 +72,7 @@ Program counterpart for above text:
 
 
 We use LiveScript to parse the expression when interpolating.
+
 
 ## Builtin Functions
 
