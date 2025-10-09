@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.2.0
+
+ - change spec: use `!""` and `""!" to replace `"""` to prevent it from being escape
+
+
 ## v0.1.3
 
  - escape `"""` heredoc syntax

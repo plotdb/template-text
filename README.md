@@ -35,6 +35,7 @@ where:
  - cfg: a hash of all available variable
  - root-path: reference root when look up files for include api.
 
+
 ## Template File Format
 
 For every string you want to replace, use `!{ ... }` with variable / expression inside. For example, 
@@ -57,6 +58,20 @@ It also supports conditional block:
     '''}
 
 
+If you need interpolation inside expressions, please note that `"""` is escaped so you need to use `!"" ... ""!`:
+
+
+    !{if user.count > 10 => !""
+
+    it seems that you have been here for !{count} times.
+
+    ""! else !""
+
+    Hi !{name}, newcomer here? You probably will want to take a look at our tutorial.
+
+    ""!}
+
+
 When calling with API, you can even use builtin functions for expressions, or custom function if you pass it into the config object:
 
     A random number: !{Math.random()}
@@ -71,7 +86,7 @@ Program counterpart for above text:
     ret = tt(<the above text>, {uuid: uuid});
 
 
-We use LiveScript to parse the expression when interpolating.
+Again, we use LiveScript to parse the expression when interpolating, so it's quite dangerous to load template from untrusted source. Be sure to only use template-text with templates from trusted source.
 
 
 ## Builtin Functions
