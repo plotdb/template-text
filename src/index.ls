@@ -8,7 +8,7 @@ engine = (code = "", opt = {}, dir = '') ->
     .replace(/\$/gm, "\\$")
     .replace(/!{/gm, '#{')
     .replace(/"""/gm, '\\"\\"\\"')
-    .replace(/!""([^"]|$)|(^|[^"])""!/gm, '"""')
+    .replace(/!""(?!")|(?<!")""!/gm, '"""')
   include = (filename) ->
     subdir = path.dirname(path.join(dir, filename))
     engine(fs.read-file-sync(path.join(dir, filename)).toString!, opt, subdir)

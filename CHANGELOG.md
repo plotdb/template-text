@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.2.1
+
+ - fix bug: `!""` / `""!` replacement consumes the adjacent character, breaking templates such as `!""!{x}""!`
+
+
 ## v0.2.0
 
  - change spec: use `!""` and `""!" to replace `"""` to prevent it from being escape
